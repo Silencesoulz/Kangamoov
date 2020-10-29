@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title></title>
+        <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+
+</head>
+<body>
+    <%- include layout %>
+    <div class="alert">
+        <%- messages() %>
+        <h3>Welcome to Kangamoov</h3>
+        <h2 align="center">Register Here</h2>
+        
+        <% if(locals.errors) { %>
+        <ul class="alert alert-danger">
+        <ul>
+            <% Object.values(errors).forEach(function(error){ %>
+                <li><%= error.msg %></li>
+            <% }) %>
+        </ul>
+        <% } %>
+    </div>
+    <div class = "container">
+    <form class ="" action="/register/add" method="post">
+        <div class="form-group">
+            <label for="">Username</label>
+            <input type="text" name="name" value="" class="form-control">
+        </div>
+        <div>
+            <label for="">Password</label>
+            <input type="text" name="password" value="" class="form-control">
+        </div>
+        <div>
+            <label for="">Telephone</label>
+            <input type="text" name="telephone" value="" class="form-control">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="text" name="email" value="" class="form-control">
+        </div>
+        &nbsp;
+        <div>
+            <input type ="submit" name="" value="Submit" class = "btn btn-primary btn-lg">
+        </div>
+    </form>
+    
+    <script>
+                $(function myFunction(){
+                    $('#messages').addClass('alert alert-success');
+                
+                })
+                
+    </script>
+</body>
+</html>
